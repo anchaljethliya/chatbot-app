@@ -26,12 +26,13 @@ import {
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID
+  apiKey: "AIzaSyBWPHW4gQxPIegGuv504c8uYlUYJnYwz7U",
+  authDomain: "ai-chatbot-cb38f.firebaseapp.com",
+  projectId: "ai-chatbot-cb38f",
+  storageBucket: "ai-chatbot-cb38f.firebasestorage.app",
+  messagingSenderId: "1060721567007",
+  appId: "1:1060721567007:web:7ceb38d84902bc7529fc2a",
+  measurementId: "G-DCCS2L48H9"
 };
 
 // Initialize Firebase
