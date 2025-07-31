@@ -35,6 +35,10 @@ const firebaseConfig = {
   measurementId: "G-DCCS2L48H9"
 };
 
+// Debug: Log the config to verify it's loaded
+console.log('Firebase Config loaded:', firebaseConfig.apiKey ? 'YES' : 'NO');
+console.log('Firebase Project ID:', firebaseConfig.projectId);
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
