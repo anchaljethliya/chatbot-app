@@ -38,8 +38,11 @@ function App() {
 
   // Check if user is logged in on app start
   useEffect(() => {
+    console.log('App: Setting up auth state listener');
     const unsubscribe = onAuthStateChange((user) => {
+      console.log('App: Auth state changed:', user ? 'User logged in' : 'No user');
       if (user) {
+        console.log('App: User details:', user);
         setCurrentUser({
           uid: user.uid,
           email: user.email,
@@ -49,6 +52,7 @@ function App() {
         setIsAuthenticated(true);
         loadUserData(user.uid);
       } else {
+        console.log('App: No user, setting authenticated to false');
         setCurrentUser(null);
         setIsAuthenticated(false);
         setChatHistory([]);
@@ -235,7 +239,11 @@ function App() {
     };
   }, [unsubscribeChats, unsubscribeMessages]);
 
+  console.log('App: Rendering with isAuthenticated:', isAuthenticated);
+  console.log('App: Current user:', currentUser);
+
   if (!isAuthenticated) {
+    console.log('App: Rendering auth container');
     return (
       <div className="auth-container">
         <div className="auth-card">
@@ -267,6 +275,7 @@ function App() {
     );
   }
 
+  console.log('App: Rendering main app');
   return (
     <div className="app">
       <div className="sidebar">

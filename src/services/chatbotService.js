@@ -6,7 +6,18 @@ export const sendMessage = async (message) => {
   console.log('API Key value:', apiKey);
   
   if (!apiKey) {
-    return "Gemini API key is missing. Please set it in your .env.local file.";
+    // Fallback responses when API key is missing
+    const fallbackResponses = [
+      "I'm here to help! This is a demo response since the Gemini API key isn't configured yet. To get real AI responses, please add your Gemini API key to the environment variables.",
+      "Hello! I'm your AI assistant. Currently running in demo mode. Add your Gemini API key to enable full AI functionality.",
+      "Thanks for your message! I'm working in demo mode right now. For real AI responses, configure your Gemini API key.",
+      "I'd love to help you with that! This is a demo response - add your Gemini API key to get intelligent responses.",
+      "Great question! I'm currently in demo mode. Set up your Gemini API key for full AI functionality."
+    ];
+    
+    // Return a random fallback response
+    const randomIndex = Math.floor(Math.random() * fallbackResponses.length);
+    return fallbackResponses[randomIndex];
   }
   
   try {
